@@ -16,7 +16,7 @@ function ss() {
         searchh.style.display = 'none'
     } else {
 
-        searchh.style.display = 'block'
+        searchh.style.display = 'inline'
     }
 }
 
@@ -50,6 +50,7 @@ function addtarr() {
 
         mainarr[tmp] = tasks
         sub.innerHTML = 'add <i class="fa-solid fa-square-plus"></i>'
+    
     } else {
 
         if (localStorage.task === undefined) {
@@ -143,9 +144,12 @@ function deletethtask(i) {
 function updatethtask(i) {
     mood = 'update'
    sub.innerHTML = 'update <i class="fa-solid fa-pen-to-square"></i>'
-    names.value = mainarr[i].names
+   searchh.style.display = 'none';
+   names.value = mainarr[i].names
     pass.value = mainarr[i].password
 }
+
+
 
 sub.addEventListener('click', (eo) => {
 
