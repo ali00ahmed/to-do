@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+
+    transition: 0.4s;
+}
+.all{
+    background: rgb(243, 243, 243);
+    width:99%;
+    margin:0px auto !important;
+height:1000px;
+}
+.card{
+ 
+    width:350px;
+    border-radius:10px;
+    border:2px solid black;
+    background: rgb(112, 112, 112);
+    display: flex;
+    margin:30px auto;
+}
+
+#form{
+width: fit-content;
+margin: auto;
+margin-top:1px;
+height:200px;
+  
+}
+input{
+    background: rgb(155, 155, 155);
+    padding:10px 40px;
+    border:none;
+    border-radius:5px;
+    display: block;
+    margin: 10px auto;
+}
+
+button{
+    padding:10px 30px;
+    border-radius:30px;
+    border:2px solid white;
+    margin:25px 30px;
+    background: rgb(160, 160, 160);
+}
+
+
+.values{
+   
+    width:250px;
+}
+#dlt{
+    padding:5px 10px;
+    border-radius:10px;
+    border:none;
+    background: rgb(192, 192, 192);
+    display: block;
+    margin:5px;
+    cursor: pointer;
+}
+#upd{
+    padding:5px 7px;
+    border-radius:10px;
+    border:none;
+    background: rgb(192, 192, 192);
+    display: block;
+    margin:5px;
+    cursor: pointer;
+
+}
+button:hover{
+    background: rgb(104, 104, 104) !important;
+}
