@@ -183,11 +183,7 @@ function ss() {
 }
 
 
-// form.addEventListener('click',(eo) => {
-//         localStorage.clear()
 
-
-// })
 
 
 
