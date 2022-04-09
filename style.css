@@ -7,30 +7,28 @@
 }
 body{
    
-    background: #ffffff;
+    background: #d1d1d1 !important;
 }
 .all{
-    background: #ffffff;
+    background: #d1d1d1;
     width:99%;
     margin:0px auto !important;
 height:fit-content;
 }
+
+
 .card{
- 
-    width:350px;
-    border-radius:10px;
-    border:2px solid rgb(184, 0, 0);
-    background: rgb(112, 112, 112);
-    display: flex;
-    margin:30px auto;
+    margin:20px 0px;
 }
 
 #form{
 width: fit-content;
+height:fit-content !important;;
 margin: auto;
 margin-top:1px;
 height:200px;
-  
+
+text-align: center;
 }
 input{
     background: rgb(155, 155, 155);
@@ -38,46 +36,23 @@ input{
     border:none;
     border-radius:5px;
     display: block;
-    margin: 10px auto;
+    margin: 10px auto !important;
 }
 
-button{
-    padding:10px 30px;
-    border-radius:30px;
-    border:2px solid white;
-    margin:25px 30px;
-    background: rgb(160, 160, 160);
-    cursor: pointer;
-
+.text-center{
+width:60%;
 }
-
 
 .values{
    
     width:250px;
 }
-#dlt{
-    padding:5px 10px;
-    border-radius:10px;
-    border:none;
-    background: rgb(192, 192, 192);
-    display: block;
-    margin:5px;
-    cursor: pointer;
-}
-#upd{
-    padding:5px 7px;
-    border-radius:10px;
-    border:none;
-    background: rgb(192, 192, 192);
-    display: block;
-    margin:5px;
-    cursor: pointer;
 
-}
-button:hover{
-    background: rgb(104, 104, 104) !important;
 
+.pipe{
+    height:50px;
+    width:3px;
+    background: #000;
 }
 
 .no{
@@ -89,8 +64,34 @@ button:hover{
 }
 
 #info{
-    text-align: center;
+display: flex;
+flex-direction: column;
+margin-top:50px;
+justify-content: center;
+align-items: center;
+
 }
+
+
+#photo-upload{
+    background: none;
+
+
+
+}
+
+
+
+.h4{
+    font:2px !important;
+}
+
+
+
+
+
+
+
 
 
 @media (max-width:825px) {

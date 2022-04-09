@@ -7,26 +7,28 @@ let mode = document.getElementById('mode')
 let searchh = document.getElementById('search')
 let mood = 'add'
 let tmp2;
+let tmp;
+
 
 
 function ss() {
-        if (localStorage.task.length <= 2) {
-            searchh.style.display = 'none'
-        } else {
-            
-            searchh.style.display = 'block'
-        }
+    if (localStorage.task.length <= 2) {
+        searchh.style.display = 'none'
+    } else {
+
+        searchh.style.display = 'block'
     }
+}
 
 
 let mainarr;
 
 if (localStorage.task !== undefined) {
 
-    
+
     mainarr = JSON.parse(localStorage.task)
 
-  
+
 
 } else {
 
@@ -47,6 +49,7 @@ function addtarr() {
     if (mood === 'update') {
 
         mainarr[tmp] = tasks
+        sub.innerHTML = 'add <i class="fa-solid fa-square-plus"></i>'
     } else {
 
         if (localStorage.task === undefined) {
@@ -55,12 +58,12 @@ function addtarr() {
 
     }
     mood = 'add'
-    mode.innerHTML = 'create'
+    
 
     if (localStorage.task !== undefined) {
-      ss()
+        ss()
     }
-  
+
 }
 
 
@@ -78,12 +81,25 @@ function showcards() {
         tmp = i;
 
 
-        table += `<div class="card">
-        <div class="values">  <h4>${mainarr[tmp].names}</h4>
-          <h4>${mainarr[tmp].password}</h4></div>
-          <button id="dlt" onclick='deletethtask(${i})' >delete ${i + 1}</button>
-          <button id="upd" onclick='updatethtask(${tmp})' >update</button>
-      </div>`
+        table += `
+      <div class="card text-center">
+  <div class="card-header">${i + 1}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">${mainarr[i].names}</h5>
+    <p class="card-text">${mainarr[i].password}</p>
+    <button type="button" id="dlt" onclick='deletethtask(${i})' class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+    <button type="button" id="upd" onclick='updatethtask(${i})'  class="btn btn-outline-success"><i class="fa-solid fa-pen"></i></button>
+  </div>
+  <div class="card-footer text-muted">
+  
+  </div>
+</div>
+      
+      
+      
+      
+      `
 
 
 
@@ -95,7 +111,7 @@ function showcards() {
 
     if (localStorage.task !== undefined) {
         ss()
-      }
+    }
 
 }
 
@@ -111,7 +127,7 @@ if (localStorage.task !== undefined) {
     showcards()
     if (localStorage.task !== undefined) {
         ss()
-      }
+    }
 }
 
 function deletethtask(i) {
@@ -120,13 +136,13 @@ function deletethtask(i) {
     showcards()
     if (localStorage.task !== undefined) {
         ss()
-      }
+    }
 }
 
 
 function updatethtask(i) {
     mood = 'update'
-    mode.innerHTML = 'update'
+   sub.innerHTML = 'update <i class="fa-solid fa-pen-to-square"></i>'
     names.value = mainarr[i].names
     pass.value = mainarr[i].password
 }
@@ -144,9 +160,10 @@ sub.addEventListener('click', (eo) => {
 
     names.value = ''
     pass.value = ''
+    
     if (localStorage.task !== undefined) {
         ss()
-      }
+    }
 })
 
 document.onkeyup = function (e) {
@@ -161,7 +178,7 @@ document.onkeyup = function (e) {
         pass.value = ''
         if (localStorage.task !== undefined) {
             ss()
-          }
+        }
 
     }
 
@@ -177,12 +194,23 @@ function searchtask(v) {
 
 
 
-            table += `<div class="card">
-        <div class="values">  <h4>${mainarr[i].names}</h4>
-          <h4>${mainarr[i].password}</h4></div>
-          <button id="dlt" onclick='deletethtask(${i})' >delete ${i + 1}</button>
-          <button id="upd" onclick='updatethtask(${i})' >update</button>
-      </div>`
+            table += ` <div class="card text-center">
+            <div class="card-header">${i + 1}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">${mainarr[i].names}</h5>
+              <p class="card-text">${mainarr[i].password}</p>
+              <button type="button" id="dlt" onclick='deletethtask(${i})' class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+              <button type="button" id="upd" onclick='updatethtask(${i})'  class="btn btn-outline-success"><i class="fa-solid fa-pen"></i></button>
+            </div>
+            <div class="card-footer text-muted">
+            
+            </div>
+          </div>
+                
+                
+                
+                `
 
             info.innerHTML = table
 
@@ -197,7 +225,7 @@ function searchtask(v) {
     }
     if (localStorage.task !== undefined) {
         ss()
-      }  
+    }
 }
 
 
