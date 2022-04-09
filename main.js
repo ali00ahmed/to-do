@@ -193,7 +193,7 @@ function searchtask(v) {
         showcards()
     }
     if (!mainarr[tmp2].names.includes(v)) {
-        info.innerHTML = `<h1 class='no'>no elemnts with this name</h1>`
+        info.innerHTML = `<h1 class='no'>no elemnts with this name</h1>  <img class='foto' src="https://i.gifer.com/E5db.gif" alt="not found">`
     }
     if (localStorage.task !== undefined) {
         ss()
