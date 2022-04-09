@@ -50,7 +50,7 @@ function addtarr() {
 
         mainarr[tmp] = tasks
         sub.innerHTML = 'add <i class="fa-solid fa-square-plus"></i>'
-    
+
     } else {
 
         if (localStorage.task === undefined) {
@@ -59,7 +59,7 @@ function addtarr() {
 
     }
     mood = 'add'
-    
+
 
     if (localStorage.task !== undefined) {
         ss()
@@ -143,9 +143,9 @@ function deletethtask(i) {
 
 function updatethtask(i) {
     mood = 'update'
-   sub.innerHTML = 'update <i class="fa-solid fa-pen-to-square"></i>'
-   searchh.style.display = 'none';
-   names.value = mainarr[i].names
+    sub.innerHTML = 'update <i class="fa-solid fa-pen-to-square"></i>'
+    searchh.style.display = 'none';
+    names.value = mainarr[i].names
     pass.value = mainarr[i].password
 }
 
@@ -164,7 +164,7 @@ sub.addEventListener('click', (eo) => {
 
     names.value = ''
     pass.value = ''
-    
+
     if (localStorage.task !== undefined) {
         ss()
     }
@@ -210,10 +210,7 @@ function searchtask(v) {
             <div class="card-footer text-muted">
             
             </div>
-          </div>
-                
-                
-                
+          </div> 
                 `
 
             info.innerHTML = table
@@ -224,7 +221,7 @@ function searchtask(v) {
     if (v === '') {
         showcards()
     }
-    if (!mainarr[tmp2].names.includes(v)) {
+    if (!mainarr[tmp2].names.includes(v) && mainarr[tmp2].password.includes(v)) {
         info.innerHTML = `<h1 class='no'>no elemnts with this name</h1>`
     }
     if (localStorage.task !== undefined) {
