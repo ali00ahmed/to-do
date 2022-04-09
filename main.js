@@ -9,22 +9,30 @@ let mood = 'add'
 
 
 
-
+function ss() {
+        if (localStorage.task.length <= 2) {
+            searchh.style.display = 'none'
+        } else {
+            
+            searchh.style.display = 'block'
+        }
+    }
 
 
 let mainarr;
+
 if (localStorage.task !== undefined) {
 
-
+    
     mainarr = JSON.parse(localStorage.task)
 
-    ss()
+  
 
 } else {
 
     let mainarr = [];
 
-    ss()
+
 
 }
 
@@ -48,7 +56,11 @@ function addtarr() {
     }
     mood = 'add'
     mode.innerHTML = 'create'
-    ss()
+
+    if (localStorage.task !== undefined) {
+      ss()
+    }
+  
 }
 
 
@@ -81,7 +93,9 @@ function showcards() {
 
     info.innerHTML = table
 
-    ss()
+    if (localStorage.task !== undefined) {
+        ss()
+      }
 
 }
 
@@ -95,14 +109,18 @@ function showcards() {
 
 if (localStorage.task !== undefined) {
     showcards()
-    ss()
+    if (localStorage.task !== undefined) {
+        ss()
+      }
 }
 
 function deletethtask(i) {
     mainarr.splice(i, 1);
     localStorage.task = JSON.stringify(mainarr)
     showcards()
-    ss()
+    if (localStorage.task !== undefined) {
+        ss()
+      }
 }
 
 
@@ -126,7 +144,9 @@ sub.addEventListener('click', (eo) => {
 
     names.value = ''
     pass.value = ''
-    ss()
+    if (localStorage.task !== undefined) {
+        ss()
+      }
 })
 
 document.onkeyup = function (e) {
@@ -139,7 +159,9 @@ document.onkeyup = function (e) {
 
         names.value = ''
         pass.value = ''
-        ss()
+        if (localStorage.task !== undefined) {
+            ss()
+          }
 
     }
 
@@ -169,17 +191,9 @@ function searchtask(v) {
     if (v === '') {
         showcards()
     }
- ss()   
-}
-
-
-function ss() {
-    if (localStorage.task === undefined) {
-        searchh.style.display = 'none'
-    } else {
-        
-        searchh.style.display = 'block'
-    }
+    if (localStorage.task !== undefined) {
+        ss()
+      }  
 }
 
 
