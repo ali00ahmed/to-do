@@ -5,11 +5,15 @@
 
     transition: 0.4s;
 }
+body{
+   
+    background: rgb(243, 243, 243);
+}
 .all{
     background: rgb(243, 243, 243);
     width:99%;
     margin:0px auto !important;
-height:1000px;
+height:fit-content;
 }
 .card{
  
