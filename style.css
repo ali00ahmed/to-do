@@ -13,7 +13,7 @@ height:1000px;
 }
 .card{
  
-    width:350px;
+    width:98%;
     border-radius:10px;
     border:2px solid rgb(184, 0, 0);
     background: rgb(112, 112, 112);
@@ -73,5 +73,15 @@ button{
 }
 button:hover{
     background: rgb(104, 104, 104) !important;
-    
+
 }
+
+.no{
+    font-size:27px;
+    margin:10px;
+    text-align: center;
+    color: red;
+    -webkit-text-stroke: 1.5px black;
+}
+
+

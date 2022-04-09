@@ -6,7 +6,7 @@ let dlt = document.getElementById('dlt')
 let mode = document.getElementById('mode')
 let searchh = document.getElementById('search')
 let mood = 'add'
-
+let tmp2;
 
 
 function ss() {
@@ -171,6 +171,7 @@ document.onkeyup = function (e) {
 
 function searchtask(v) {
     for (let i = 0; i < mainarr.length; i++) {
+        tmp2 = i
         let table = ''
         if (mainarr[i].names.includes(v)) {
 
@@ -190,6 +191,9 @@ function searchtask(v) {
     }
     if (v === '') {
         showcards()
+    }
+    if (!mainarr[tmp2].names.includes(v)) {
+        info.innerHTML = `<h1 class='no'>no elemnts with this name</h1>`
     }
     if (localStorage.task !== undefined) {
         ss()
