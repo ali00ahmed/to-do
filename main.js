@@ -84,7 +84,7 @@ function showcards() {
 
         table += `
       <div class="card text-center">
-  <div class="card-header">${i + 1}
+  <div class="card-header"><span class='hash'>${i + 1}</span>
   </div>
   <div class="card-body">
     <h5 class="card-title">${mainarr[i].names.toLowerCase()}</h5>
