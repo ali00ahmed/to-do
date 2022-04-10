@@ -5,16 +5,21 @@ let info = document.getElementById('info')
 let dlt = document.getElementById('dlt')
 let mode = document.getElementById('mode')
 let searchh = document.getElementById('search')
+
 let mood = 'add'
 let tmp;
 let tmp2;
 let tmp3;
-
+let tmp4;
+let tmp5;
 function ss() {
+    ml.innerHTML = mainarr.length
     if (localStorage.task.length <= 2) {
+        alll.style.display = 'none'
         searchh.style.display = 'none'
+       
     } else {
-
+       alll.style.display = 'inline'
         searchh.style.display = 'inline'
     }
 }
@@ -80,7 +85,7 @@ function showcards() {
     for (let i = 0; i < mainarr.length; i++) {
 
        
-
+tmp5 = i
 
         table += `
       <div class="card text-center">
@@ -89,8 +94,8 @@ function showcards() {
   <div class="card-body">
     <h5 class="card-title">${mainarr[i].names.toLowerCase()}</h5>
     <p class="card-text">${mainarr[i].password.toLowerCase()}</p>
-    <button type="button" id="dlt" onclick='deletethtask(${i})' class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
-    <button type="button" id="upd" onclick='updatethtask(${i})'  class="btn btn-outline-success"><i class="fa-solid fa-pen"></i></button>
+    <button type="button" id="dlt" onmouseleave='undeleto(${i})' onmouseover="deleto(${i})" onclick='deletethtask(${i})' class="btn btn-outline-danger"  class='delto'><i class="fa-solid fa-trash-can"></i></button>
+    <button type="button" id="upd" onmouseleave='unedito(${i})' onmouseover="edito(${i})" onclick='updatethtask(${i})'  class="btn btn-outline-success"><i class="fa-solid fa-pen"></i></button>
   </div>
   <div class="card-footer text-muted">
   
@@ -154,7 +159,7 @@ function updatethtask(i) {
     <div class="card-body">
       <h5 class="card-title">${mainarr[i].names}</h5>
       <p class="card-text">${mainarr[i].password}</p>
-      <button type="button" id="dlt" onclick='deletethtask(${i})' class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+      <button type="button" id="dlt" onmouseleave='undeleto(${i})' onmouseover="deleto(${i})" onclick='deletethtask(${i})' class="btn btn-outline-danger"  class='delto'><i class="fa-solid fa-trash-can"></i></button>
     </div>
     <div class="card-footer text-muted">
     
@@ -165,10 +170,10 @@ function updatethtask(i) {
     names.value = mainarr[i].names.toLowerCase()
     pass.value = mainarr[i].password.toLowerCase()
 
-    
+    alll.style.display = 'none'
     }
 
-
+console.log(mainarr);
 
 sub.addEventListener('click', (eo) => {
 
@@ -226,7 +231,7 @@ function searchtask(value) {
             <div class="card-body">
               <h5 class="card-title">${mainarr[i].names}</h5>
               <p class="card-text">${mainarr[i].password}</p>
-              <button type="button" id="dlt" onclick='deletethtask(${i})' class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+              <button type="button" id="dlt"   onclick='deletethtask(${i})' class="btn btn-outline-danger"  class='delto'><i class="fa-solid fa-trash-can"></i></button>
               <button type="button" id="upd" onclick='updatethtask(${i})'  class="btn btn-outline-success"><i class="fa-solid fa-pen"></i></button>
             </div>
             <div class="card-footer text-muted">
@@ -252,15 +257,40 @@ function searchtask(value) {
 }
 
 
+function deleteall(){
+    localStorage.clear()
+    info.innerHTML = ''
+    alll.style.display = 'none'
+    searchh.style.display = 'none'
+}
 
 
 
 
+function deleto(x){
+    let delto = document.getElementsByClassName("btn-outline-danger")[x];
+tmp4 = delto
+    delto.innerHTML = 'delete'
 
 
+}
+
+function undeleto(){
+    tmp4.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
+}
 
 
+function edito(x){
+    let editoo = document.getElementsByClassName("btn-outline-success")[x];
+tmp5 = editoo
+    editoo.innerHTML = 'update'
 
+
+}
+
+function unedito(){
+    tmp5.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
+}
 
 
 

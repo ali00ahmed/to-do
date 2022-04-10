@@ -16,6 +16,11 @@ body{
 height:fit-content;
 }
 
+.btn-secondary{
+   
+    width: 190px;
+    
+}
 
 .card{
     margin:20px 0px;
@@ -23,13 +28,13 @@ height:fit-content;
 
 #form{
 width:300px;
-height:fit-content !important;;
+height:fit-content !important;
 margin: auto;
 margin-top:1px;
 height:200px;
-
 text-align: center;
 }
+
 
 
 .text-center{
@@ -57,17 +62,17 @@ align-items: center;
 
 }
 #search{
-   border-radius:10px ;
+   border-radius:5px ;
     width:90px;
     height: 50px;
     font-size:20px;
     padding:4px;
-    margin: 10px !important;
+    margin: 5px !important;
     border:none;
 }
 
 #sub{ 
-    margin: 10px !important;
+   
     display: inline !important;
     
 }
@@ -89,7 +94,7 @@ nav h1{
     display: inline;
     color: white;
     -webkit-text-stroke:2px black;
-    font-family:cursive !important;
+    
    
 }
 nav p{
@@ -128,6 +133,4 @@ nav p{
         margin:30px auto;
     }
 }
-
-
 
