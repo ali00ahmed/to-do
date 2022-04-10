@@ -289,7 +289,7 @@ tmp5 = editoo
 }
 
 function unedito(){
-    tmp5.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
+    tmp5.innerHTML = '<i class="fa-solid fa-pen"></i>'
 }
 
 
