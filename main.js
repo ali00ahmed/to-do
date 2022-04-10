@@ -6,10 +6,9 @@ let dlt = document.getElementById('dlt')
 let mode = document.getElementById('mode')
 let searchh = document.getElementById('search')
 let mood = 'add'
-let tmp2;
 let tmp;
-
-
+let tmp2;
+let tmp3;
 
 function ss() {
     if (localStorage.task.length <= 2) {
@@ -47,7 +46,8 @@ function addtarr() {
     }
 
     if (mood === 'update') {
-
+     
+     
         mainarr[tmp] = tasks
         sub.innerHTML = 'add <i class="fa-solid fa-square-plus"></i>'
 
@@ -79,7 +79,7 @@ function showcards() {
     let table = ''
     for (let i = 0; i < mainarr.length; i++) {
 
-        tmp = i;
+       
 
 
         table += `
@@ -87,8 +87,8 @@ function showcards() {
   <div class="card-header">${i + 1}
   </div>
   <div class="card-body">
-    <h5 class="card-title">${mainarr[i].names}</h5>
-    <p class="card-text">${mainarr[i].password}</p>
+    <h5 class="card-title">${mainarr[i].names.toLowerCase()}</h5>
+    <p class="card-text">${mainarr[i].password.toLowerCase()}</p>
     <button type="button" id="dlt" onclick='deletethtask(${i})' class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
     <button type="button" id="upd" onclick='updatethtask(${i})'  class="btn btn-outline-success"><i class="fa-solid fa-pen"></i></button>
   </div>
@@ -145,9 +145,28 @@ function updatethtask(i) {
     mood = 'update'
     sub.innerHTML = 'update <i class="fa-solid fa-pen-to-square"></i>'
     searchh.style.display = 'none';
-    names.value = mainarr[i].names
-    pass.value = mainarr[i].password
-}
+    tmp = i;
+
+    let table;
+    table = `<div class="card text-center">
+    <div class="card-header">${i + 1}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">${mainarr[i].names}</h5>
+      <p class="card-text">${mainarr[i].password}</p>
+      <button type="button" id="dlt" onclick='deletethtask(${i})' class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
+    <div class="card-footer text-muted">
+    
+    </div>
+  </div> 
+        `
+        info.innerHTML = table
+    names.value = mainarr[i].names.toLowerCase()
+    pass.value = mainarr[i].password.toLowerCase()
+
+    
+    }
 
 
 
@@ -190,11 +209,14 @@ document.onkeyup = function (e) {
 }
 
 
-function searchtask(v) {
+function searchtask(value) {
+    tmp2 = value.toLowerCase()
+
+    let table = ''
     for (let i = 0; i < mainarr.length; i++) {
-        tmp2 = i
-        let table = ''
-        if (mainarr[i].names.includes(v)) {
+        tmp3 = i;
+
+        if (mainarr[i].names.includes(tmp2)) {
 
 
 
@@ -216,17 +238,17 @@ function searchtask(v) {
             info.innerHTML = table
 
         }
+        
+        if (value === '') {
+            showcards()
+        }
+
+        if (localStorage.task !== undefined) {
+            ss()
+        }
 
     }
-    if (v === '') {
-        showcards()
-    }
-    if (!mainarr[tmp2].names.includes(v) && mainarr[tmp2].password.includes(v)) {
-        info.innerHTML = `<h1 class='no'>no elemnts with this name</h1>`
-    }
-    if (localStorage.task !== undefined) {
-        ss()
-    }
+
 }
 
 
