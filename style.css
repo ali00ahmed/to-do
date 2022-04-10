@@ -86,10 +86,14 @@ nav{
     
 }
 nav h1{
+    display: inline;
     color: white;
     -webkit-text-stroke:2px black;
     font-family:cursive !important;
    
+}
+nav p{
+    display: inline;
 }
 
 

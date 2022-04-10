@@ -41,8 +41,8 @@ if (localStorage.task !== undefined) {
 
 function addtarr() {
     let tasks = {
-        names: names.value,
-        password: pass.value
+        names: names.value.toLowerCase(),
+        password: pass.value.toLowerCase()
     }
 
     if (mood === 'update') {
