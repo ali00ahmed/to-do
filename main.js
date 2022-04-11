@@ -143,6 +143,7 @@ function deletethtask(i) {
     if (localStorage.task !== undefined) {
         ss()
     }
+    searchh.value = ''
 }
 
 
@@ -291,6 +292,12 @@ tmp5 = editoo
 function unedito(){
     tmp5.innerHTML = '<i class="fa-solid fa-pen"></i>'
 }
+
+
+
+
+
+
 
 
 
